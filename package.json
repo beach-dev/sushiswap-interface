@@ -97,6 +97,7 @@
     "graphql-tag": "^2.12.5",
     "husky": "^7.0.0",
     "ioredis": "^4.27.7",
+    "lightweight-charts": "^3.3.0",
     "limitorderv2-sdk": "^0.1.62",
     "lint-staged": "^11.0.0",
     "lodash": "^4.17.21",
@@ -140,7 +141,8 @@
     "tailwindcss": "^2.2.7",
     "tailwindcss-border-gradient-radius": "^2.0.0",
     "typescript": "^4.3.5",
-    "wcag-contrast": "^3.0.0"
+    "wcag-contrast": "^3.0.0",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "next-unused": {
     "debug": true,
