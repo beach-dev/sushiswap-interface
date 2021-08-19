@@ -74,7 +74,7 @@ export default function Farming() {
         <title>Tokens | Sushi</title>
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
-      <BreadcrumbBar crumbs={['LCRX', 'Farming']} links={['/tokens/swap', '#']} />
+      <BreadcrumbBar crumbs={['LCRX', 'Farming']} links={['/tokens', '#']} />
       <TokensTab defaultTab="2" />
       <div className="w-full bg-tokens_title_bg bg-opacity-25">
         <div className="grid grid-cols-12 max-w-7xl mx-auto">

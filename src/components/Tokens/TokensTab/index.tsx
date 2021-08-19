@@ -1,11 +1,11 @@
 import React from 'react'
 import { classNames } from '../../../functions'
 
-function TokensTab({ defaultTab }: { defaultTab: any }) {
+function TokensTab({ className, defaultTab }: any) {
   const tabs = [
     {
       title: 'Overview',
-      path: '/tokens/swap',
+      path: '/tokens',
     },
     {
       title: 'Liquidity',
@@ -30,8 +30,8 @@ function TokensTab({ defaultTab }: { defaultTab: any }) {
   ]
 
   return (
-    <div className="relative w-full h-16 px-5 border-b border-t border-dark-700">
-      <div className="grid grid-cols-12 max-w-7xl m-auto h-full">
+    <div className={classNames(className, 'relative w-full h-16 px-5 border-b border-t border-dark-700')}>
+      <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
         <div className="col-span-7 flex h-full">
           {tabs.map((tab, index) => (
             <div key={index} className="flex-1 flex h-full">

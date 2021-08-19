@@ -108,7 +108,7 @@ function AppBar(): JSX.Element {
                         </NavLink>
                       )}
                       {chainId === ChainId.MAINNET && (
-                        <Link href={'/tokens/swap'}>
+                        <Link href={'/tokens'}>
                           <a
                             id={`stake-nav-link`}
                             className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -358,7 +358,7 @@ function AppBar(): JSX.Element {
                   </ExternalLink>
                 )}
                 {chainId === ChainId.MAINNET && (
-                  <Link href={'/tokens/swap'}>
+                  <Link href={'/tokens'}>
                     <a
                       id={`stake-nav-link`}
                       className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
