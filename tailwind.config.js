@@ -62,6 +62,8 @@ module.exports = {
         primary: '#BFBFBF',
         secondary: '#7F7F7F',
         'high-emphesis': '#E3E3E3',
+        'transparent-blue': '#0993ec20',
+        'transparent-pink': '#f338c320',
       },
       lineHeight: {
         '48px': '48px',
@@ -132,6 +134,9 @@ module.exports = {
           },
         },
       },
+      backgroundImage: (theme) => ({
+        tokens_title_bg: "url('/images/tokens_assets/liquidity_banner_bg.png')",
+      }),
     },
   },
   variants: {
