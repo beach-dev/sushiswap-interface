@@ -93,10 +93,10 @@ export default function Liquidity() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Liquidity']} links={['/tokens', '#']} />
-      <TokensTab defaultTab="1" />
-      <div className="w-full bg-tokens_title_bg bg-opacity-25">
-        <div className="grid grid-cols-12 max-w-7xl mx-auto">
-          <div className="col-span-7 flex flex-col py-8 ">
+      <TokensTab className="hidden sm:block" defaultTab="1" />
+      <div className="w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl mx-auto">
+          <div className="lg:col-span-7 flex flex-col py-8 ">
             <div className="text-high-emphesis font-bold text-2xl">Manage {tokenInfo.symbol} Liquidity</div>
             <div className="mt-5">
               Liquidity providers earn a 0.25% fee on all trades proportional to their share of the pool. Fees are added
@@ -111,9 +111,9 @@ export default function Liquidity() {
           </div>
         </div>
       </div>
-      <div className="relative w-full px-10 pt-10">
-        <div className="grid grid-cols-12 max-w-7xl m-auto h-full">
-          <div className="col-span-7 flex flex-col h-full">
+      <div className="relative px-3 md:px-6 lg:px-10 w-full pt-10">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
+          <div className="lg:col-span-7 flex flex-col h-full">
             {/* Your Liquidity */}
             <div className="w-full">
               <div className="text-xl text-white font-medium">Your {tokenInfo.symbol} Liquidity:</div>
@@ -150,9 +150,9 @@ export default function Liquidity() {
               </div>
             </div>
           </div>
-          <div className="col-span-5">
-            <DoubleGlowShadow>
-              <LiquidityCard className="mx-auto -mt-80" token1={token1} />
+          <div className="lg:col-span-5">
+            <DoubleGlowShadow className="mx-auto">
+              <LiquidityCard className="mx-auto mt-10 lg:-mt-80" token1={token1} />
             </DoubleGlowShadow>
           </div>
         </div>

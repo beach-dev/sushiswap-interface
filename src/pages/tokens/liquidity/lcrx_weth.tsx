@@ -65,10 +65,10 @@ export default function LCRX_WETH_TEST() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Liquidity', tokenPair()]} links={['/tokens', '/tokens/liquidity', '#']} />
-      <TokensTab defaultTab="1" />
-      <div className="w-full bg-tokens_title_bg bg-opacity-25">
-        <div className="grid grid-cols-12 max-w-7xl mx-auto">
-          <div className="col-span-7 flex flex-col py-8 ">
+      <TokensTab className="hidden sm:block" defaultTab="1" />
+      <div className="w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl mx-auto">
+          <div className="lg:col-span-7 flex flex-col py-8 ">
             <div className="text-high-emphesis font-bold text-2xl">Manage {tokenPair()} Liquidity</div>
             <div className="mt-5 flex space-x-5">
               <div className="flex-1 flex">
@@ -88,9 +88,9 @@ export default function LCRX_WETH_TEST() {
           </div>
         </div>
       </div>
-      <div className="relative w-full px-10 pt-10">
-        <div className="grid grid-cols-12 max-w-7xl m-auto h-full">
-          <div className="col-span-7 flex flex-col h-full text-secondary">
+      <div className="relative px-3 md:px-6 lg:px-10 w-full pt-10">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
+          <div className="lg:col-span-7 flex flex-col h-full text-secondary">
             <div className="grid grid-cols-3 gap-x-2 gap-y-4 pb-5 border-b border-dark-800">
               <div className="text-white font-medium text-xl">Your Pool Share</div>
               <div className="text-white font-medium text-xl">Your Deposits</div>
@@ -150,9 +150,9 @@ export default function LCRX_WETH_TEST() {
               See more details on analytics.sushi.com
             </div>
           </div>
-          <div className="col-span-5">
-            <DoubleGlowShadow>
-              <LiquidityCard className="mx-auto -mt-64" token1={token1} token2={token2} />
+          <div className="lg:col-span-5">
+            <DoubleGlowShadow className="mx-auto">
+              <LiquidityCard className="mx-auto mt-10 lg:-mt-64" token1={token1} token2={token2} />
             </DoubleGlowShadow>
           </div>
         </div>

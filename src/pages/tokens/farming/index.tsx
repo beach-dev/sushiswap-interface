@@ -75,10 +75,10 @@ export default function Farming() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Farming']} links={['/tokens', '#']} />
-      <TokensTab defaultTab="2" />
-      <div className="w-full bg-tokens_title_bg bg-opacity-25">
-        <div className="grid grid-cols-12 max-w-7xl mx-auto">
-          <div className="col-span-7 flex flex-col py-8 ">
+      <TokensTab className="hidden sm:block" defaultTab="2" />
+      <div className="w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl mx-auto">
+          <div className="lg:col-span-7 flex flex-col py-8 ">
             <div className="text-high-emphesis font-bold text-2xl">{tokenInfo.symbol} Yield Farms</div>
             <div className="mt-5">Earn reward tokens by farming liquidity or lending positions.</div>
             <div className="mt-5">
@@ -89,9 +89,9 @@ export default function Farming() {
           </div>
         </div>
       </div>
-      <div className="relative w-full px-10 pt-10">
-        <div className="grid grid-cols-12 max-w-7xl m-auto h-full">
-          <div className="col-span-7 flex flex-col h-full">
+      <div className="relative px-3 md:px-6 lg:px-10 w-full pt-10">
+        <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
+          <div className="lg:col-span-7 flex flex-col h-full">
             {/* Your LCRX Farms */}
             <div className="w-full">
               <div className="text-xl text-white font-medium">Your {tokenInfo.symbol} Liquidity:</div>
@@ -128,8 +128,8 @@ export default function Farming() {
               </div>
             </div>
           </div>
-          <div className="col-span-5">
-            <div className="relative w-80 h-[420px] mx-auto -mt-72 bg-dark-900 rounded">
+          <div className="lg:col-span-5">
+            <div className="relative w-80 h-[420px] mx-auto mt-10 lg:-mt-72 bg-dark-900 rounded">
               <div className="absolute w-full h-full bg-gradient-to-r from-blue to-pink opacity-10"></div>
               <div className="w-full h-full flex items-center justify-center px-10 text-center text-secondary">
                 Please select a farm to get started
