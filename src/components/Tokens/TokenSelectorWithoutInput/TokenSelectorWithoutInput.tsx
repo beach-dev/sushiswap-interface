@@ -33,7 +33,6 @@ function TokenSelectorWithoutInput({ oddColor, defaultToken }: any) {
     </div>
   ) : (
     <div className="w-full p-5 flex flex-col">
-      <div className="text-sm text-secondary">{caption}</div>
       <div
         className={classNames(
           'flex rounded items-center space-x-2 h-16 my-2 px-3',
