@@ -7,8 +7,29 @@ import Image from 'next/image'
 import { mockData } from './chartMockData'
 import { createChart } from 'lightweight-charts'
 
-function TokenChart({}) {
+function TokenChart({ onCrosshairMoved }: any) {
   const chartRef = useRef()
+
+  const dateToString = (date) => {
+    const year = date.year
+    const month = date.month < 10 ? '0' + date.month : date.month
+    const day = date.day < 10 ? '0' + date.day : date.day
+    return year + '-' + month + '-' + day
+  }
+
+  const handleCrosshairMoved = (event) => {
+    if (!onCrosshairMoved) {
+      return
+    }
+
+    const graphData = mockData.find((x) => x.time == event.time)
+
+    if (graphData) {
+      onCrosshairMoved({ price: graphData.value, priceChange: graphData.priceChange })
+    } else {
+      onCrosshairMoved(null)
+    }
+  }
 
   useEffect(() => {
     const chart = createChart(chartRef.current, {
@@ -57,6 +78,8 @@ function TokenChart({}) {
         chart.resize(width, 300)
       }
     })
+
+    chart.subscribeCrosshairMove(handleCrosshairMoved)
     ro.observe(document.querySelector('#chartDiv'))
   }, [])
 

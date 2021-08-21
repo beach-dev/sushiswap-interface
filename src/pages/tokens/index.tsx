@@ -144,6 +144,15 @@ export default function Tokens() {
   const chartTimespans = ['24H', '1W', '1M', '1Y', 'ALL']
 
   const [actionBarVisible, setActionBarVisible] = useState(false)
+  const [tokenPrice, setTokenPrice] = useState(tokenInfo.values[0])
+
+  const onCrosshairMoved = (value) => {
+    if (value) {
+      setTokenPrice(value)
+    } else {
+      setTokenPrice(tokenInfo.values[0])
+    }
+  }
 
   return (
     <Container id="tokens-page" maxWidth="full">
@@ -174,7 +183,7 @@ export default function Tokens() {
                   <div className="flex-1"></div>
                   <div className="flex h-[25px] px-2 py-1 rounded-full bg-green bg-opacity-25 text-green text-xs font-medium justify-center items-center">
                     <ArrowUpIcon className="w-[12px] h-[12px]" />
-                    <div>{`${tokenInfo.values[0].priceChange}%`}</div>
+                    <div>{`${tokenPrice.priceChange}%`}</div>
                   </div>
                 </div>
               </div>
@@ -182,8 +191,8 @@ export default function Tokens() {
 
             {/* token price graph */}
             <div className="mt-10">
-              <div className="w-full max-w-3xl">
-                <TokenChart />
+              <div className="w-full max-w-3xl mx-auto">
+                <TokenChart onCrosshairMoved={onCrosshairMoved} />
               </div>
               <div className="mt-8 flex flex-row justify-start space-x-2">
                 {chartTimespans.map((timespan, i) => (
