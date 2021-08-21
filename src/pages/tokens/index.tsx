@@ -161,12 +161,12 @@ export default function Tokens() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX']} links={['#']} />
-      <TokensTab className="hidden sm:block" defaultTab="0" />
+      <TokensTab className="hidden lg:block" defaultTab="0" />
       <div className="relative w-full px-3 md:px-6 lg:px-10 pt-10">
         <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
           <div className="lg:col-span-7 flex flex-col h-full">
             {/* token image, title, pricing */}
-            <div className="w-full flex flex-col sm:flex-row">
+            <div className="w-full flex flex-col lg:flex-row">
               <div className="flex-1 flex items-center">
                 <div>
                   <Image src={tokenInfo.imageUrl} width={40} height={40} />
@@ -177,8 +177,8 @@ export default function Tokens() {
                 </div>
                 <div className="flex-1"></div>
               </div>
-              <div className="flex flex-row space-x-2 sm:flex-col">
-                <div className="text-3xl text-white font-medium">{`$${tokenInfo.values[0].price}`}</div>
+              <div className="flex flex-row space-x-2 lg:flex-col">
+                <div className="text-3xl text-white font-medium">{`$${tokenPrice.price}`}</div>
                 <div className="flex items-center">
                   <div className="flex-1"></div>
                   <div className="flex h-[25px] px-2 py-1 rounded-full bg-green bg-opacity-25 text-green text-xs font-medium justify-center items-center">
@@ -202,7 +202,7 @@ export default function Tokens() {
                       timespan === chartTimespan
                         ? 'rounded-full border-blue border border-opacity-50 bg-blue bg-opacity-25 text-blue'
                         : 'text-secondary',
-                      'flex-1 sm:flex-initial w-10'
+                      'flex-1 lg:flex-initial w-10'
                     )}
                     onClick={() => setChartTimespan(timespan)}
                   >
@@ -213,7 +213,7 @@ export default function Tokens() {
             </div>
 
             {/* token description */}
-            <div className="hidden sm:block w-full mt-10">
+            <div className="hidden lg:block w-full mt-10">
               <div className="text-xl text-white font-medium">{`About ${tokenInfo.symbol}`}</div>
               <div className="flex flex-row items-center space-x-6 mt-5">
                 <a key={socialsPlaceholder.length} href={tokenInfo.website}>
@@ -258,7 +258,7 @@ export default function Tokens() {
             </div>
 
             {/* news & articles */}
-            <div className="hidden sm:block w-full mt-10">
+            <div className="hidden lg:block w-full mt-10">
               <div className="text-xl text-white font-medium">News &amp; Articles</div>
 
               {tokenInfo.articles.map((article, i) => (
@@ -273,7 +273,7 @@ export default function Tokens() {
             </div>
 
             {/* related lists */}
-            <div className="hidden sm:block w-full mt-10">
+            <div className="hidden lg:block w-full mt-10">
               <div className="text-xl text-white font-medium">Related Lists</div>
               <div className="flex mt-5 space-x-5">
                 {tokenInfo.relatedLists.map((item, i) => (
@@ -283,7 +283,7 @@ export default function Tokens() {
             </div>
 
             {/* top moving pairs */}
-            <div className="hidden sm:block w-full mt-10">
+            <div className="hidden lg:block w-full mt-10">
               <div className="text-xl text-white font-medium">Top Moving Pairs</div>
               <TokenPairListHeader columns={['Token Pair', 'APY', 'TVL']} />
               <div className="flex-col space-y-2">
@@ -301,10 +301,10 @@ export default function Tokens() {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <DoubleGlowShadow className="hidden sm:block mx-auto">
-              <SwapCard className="hidden sm:block mx-auto mt-10 lg:-mt-24" />
+            <DoubleGlowShadow className="hidden lg:block mx-auto">
+              <SwapCard className="hidden lg:block mx-auto mt-10 lg:-mt-24" />
             </DoubleGlowShadow>
-            <div className="sm:w-80 mx-auto mt-8 flex flex-col">
+            <div className="lg:w-80 mx-auto mt-8 flex flex-col">
               <div className="text-xl text-white mb-3">Token Stats</div>
               <TokenValueRow
                 caption="Market Cap"
@@ -330,7 +330,7 @@ export default function Tokens() {
                       timespan === chartTimespan
                         ? 'rounded-full border-blue border border-opacity-50 bg-blue bg-opacity-25 text-blue'
                         : 'text-secondary',
-                      'flex-1 sm:flex-auto w-10'
+                      'flex-1 lg:flex-auto w-10'
                     )}
                     onClick={() => setChartTimespan(timespan)}
                   >
@@ -340,13 +340,13 @@ export default function Tokens() {
               </div>
             </div>
           </div>
-          <div className="sm:hidden ml-auto mt-10 mb-5 w-full py-2 text-center text-white rounded border border-transparent border-gradient-r-blue-pink-dark-1000">
+          <div className="lg:hidden ml-auto mt-10 mb-5 w-full py-2 text-center text-white rounded border border-transparent border-gradient-r-blue-pink-dark-1000">
             View Analytics
           </div>
         </div>
       </div>
       {/* Bottom bar in mobile */}
-      <div className="fixed left-0 bottom-0 z-40 sm:hidden flex items-center space-x-5 px-5 w-full h-[60px] bg-dark-900">
+      <div className="fixed left-0 bottom-0 z-40 lg:hidden flex items-center space-x-5 px-5 w-full h-[60px] bg-dark-900">
         <div>SUSHI</div>
         <div className="text-high-emphesis">$1,234.56</div>
         <div className="flex-1 flex justify-end">
@@ -360,7 +360,7 @@ export default function Tokens() {
       </div>
       {/* Action bar in mobile */}
       {actionBarVisible && (
-        <div className="fixed left-0 bottom-0 z-50 sm:hidden rounded-t flex flex-col w-full bg-dark-800">
+        <div className="fixed left-0 bottom-0 z-50 lg:hidden rounded-t flex flex-col w-full bg-dark-800">
           <div className="flex items-center px-4 h-16 rounded-t bg-gradient-to-r from-blue to-pink text-high-emphesis">
             <div className="flex-1">Available actions for LCRX</div>
             <button onClick={() => setActionBarVisible(false)}>
