@@ -17,15 +17,15 @@ function TokensTab({ className, defaultTab }: any) {
     },
     {
       title: 'Lend',
-      path: '#',
+      path: '/tokens/lend',
     },
     {
       title: 'Borrow',
-      path: '#',
+      path: '/tokens/borrow',
     },
     {
       title: 'Auction',
-      path: '#',
+      path: '/tokens/auction',
     },
   ]
 
@@ -38,9 +38,9 @@ function TokensTab({ className, defaultTab }: any) {
               <div className="flex flex-col">
                 <a href={tab.path} className={classNames('flex-1 pt-5', index == defaultTab ? 'text-white' : null)}>
                   {tab.title}
-                  {index == 5 && <div className="text-green inline ml-2">Live</div>}
+                  {index == 5 && <div className="text-green inline ml-2">LIVE</div>}
                 </a>
-                {index == defaultTab && <div className="h-2 w-16 bg-dark-700"></div>}
+                {index == defaultTab && <div className="h-2 bg-dark-700"></div>}
               </div>
             </div>
           ))}

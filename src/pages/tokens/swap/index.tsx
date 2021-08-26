@@ -10,14 +10,14 @@ export default function Swap() {
     symbol: 'LCRX',
     balance: '501.23',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
   }
 
   const token2Info = {
     symbol: 'WETH',
     balance: '2.134',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/eth_psxf7x.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766971/eth_msolwl.png',
     rate: '476.5432',
   }
 

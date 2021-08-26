@@ -20,13 +20,13 @@ import TokenPairListHeader from '../../../components/Tokens/TokenPairListHeader'
 import TokenPairListRow from '../../../components/Tokens/TokenPairListRow'
 import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
 
-export default function LCRX_WETH_TEST() {
+export default function LCRX_WETH_LIQUIDITY() {
   const liquidityInfo = {
     tokenPair: {
       token1: 'LCRX',
-      tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+      tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
       token2: 'USDT',
-      tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+      tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
     },
     apy: '22.27',
     tvl: '340,910,740.72',
@@ -46,14 +46,14 @@ export default function LCRX_WETH_TEST() {
     symbol: 'LCRX',
     balance: '518.392837',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
   }
 
   const token2 = {
     symbol: 'USDT',
     balance: '5,000.00',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
   }
 
   const tokenPair = () => liquidityInfo.tokenPair.token1 + '/' + liquidityInfo.tokenPair.token2

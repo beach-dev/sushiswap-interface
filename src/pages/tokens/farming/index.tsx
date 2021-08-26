@@ -26,9 +26,9 @@ export default function Farming() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'WETH',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -36,9 +36,9 @@ export default function Farming() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDC',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -48,9 +48,9 @@ export default function Farming() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'WETH',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -58,9 +58,9 @@ export default function Farming() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDC',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -104,7 +104,7 @@ export default function Farming() {
                     apy={pair.apy}
                     tvl={pair.tvl}
                     button="Manage"
-                    buttonLink="/tokens/liquidity/lcrx_weth"
+                    buttonLink="/tokens/farming/lcrx_weth"
                   />
                 ))}
               </div>

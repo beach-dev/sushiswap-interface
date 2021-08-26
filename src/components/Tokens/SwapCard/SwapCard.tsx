@@ -11,7 +11,7 @@ function SwapCard({ className }: any) {
     symbol: 'LCRX',
     balance: '518.392837',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
   }
 
   return (

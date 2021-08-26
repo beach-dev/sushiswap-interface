@@ -27,9 +27,9 @@ export default function Liquidity() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDT',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -37,9 +37,9 @@ export default function Liquidity() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDC',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '4,200.01',
@@ -49,9 +49,9 @@ export default function Liquidity() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDT',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdt_evcmww.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/usdt_ruhjzx.png',
         },
         apy: '22.27',
         tvl: '87,453,210',
@@ -59,9 +59,9 @@ export default function Liquidity() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'WETH',
-          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/eth_psxf7x.png',
+          tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766971/eth_msolwl.png',
         },
         apy: '21.38',
         tvl: '874,563',
@@ -69,7 +69,7 @@ export default function Liquidity() {
       {
         tokenPair: {
           token1: 'LCRX',
-          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+          tokenImage1: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
           token2: 'USDC',
           tokenImage2: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/usdc_l40vk7.png',
         },
@@ -83,7 +83,7 @@ export default function Liquidity() {
     symbol: 'LCRX',
     balance: '518.392837',
     usdc: '0',
-    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629231893/lcrx_kcipbc.png',
+    imageUrl: 'https://res.cloudinary.com/dz7i261jo/image/upload/v1629766875/lcrx_aky5xr.png',
   }
 
   return (
