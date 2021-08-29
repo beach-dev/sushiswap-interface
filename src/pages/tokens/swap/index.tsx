@@ -3,7 +3,8 @@ import Head from 'next/head'
 import BreadcrumbBar from '../../../components/Tokens/BreadcrumbBar'
 
 import { AdjustmentsIcon, ArrowNarrowUpIcon, ArrowNarrowDownIcon } from '@heroicons/react/outline'
-import TokenSelectorMobile from '../../../components/Tokens/TokenSelectorMobile/TokenSelectorMobile'
+import TokenSelectorMobile from '../../../components/Tokens/TokenSelector/TokenSelectorMobile'
+import ActionBar from '../../../components/Tokens/ActionBar'
 
 export default function Swap() {
   const tokenInfo = {
@@ -35,9 +36,14 @@ export default function Swap() {
             <AdjustmentsIcon className="w-[25px] h-[25px] transform rotate-90" />
           </button>
         </div>
-        <TokenSelectorMobile defaultToken={tokenInfo} />
-        <div></div>
-        <TokenSelectorMobile defaultToken={token2Info} />
+        <TokenSelectorMobile className="relative z-10" defaultToken={tokenInfo} />
+        <div className="-mt-3 flex justify-end mr-2">
+          <div className="flex w-[54px] h-[54px] items-center justify-center rounded-full bg-dark-700 border border-dark-900 border-2">
+            <ArrowNarrowUpIcon className="w-[30px] h-[30px]" />
+            <ArrowNarrowDownIcon className="-ml-4 w-[30px] h-[30px]" />
+          </div>
+        </div>
+        <TokenSelectorMobile className="-mt-10" defaultToken={token2Info} />
         <div className="flex items-center space-x-2 rounded bg-dark-900 mt-2">
           <div className="rounded-l px-3 py-3 bg-dark-800 text-secondary">RATE</div>
           <div className="flex-1">
@@ -56,6 +62,7 @@ export default function Swap() {
         </div>
         <button className="w-full py-2 text-center text-secondary mt-5 rounded bg-dark-700">Enter Amounts</button>
       </div>
+      <ActionBar />
     </Container>
   )
 }

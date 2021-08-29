@@ -2,7 +2,7 @@ import React from 'react'
 import { classNames } from '../../../functions'
 import { PlusIcon } from '@heroicons/react/outline'
 import TokenSelector from '../TokenSelector/TokenSelector'
-import TokenSelectorWithoutInput from '../TokenSelectorWithoutInput/TokenSelectorWithoutInput'
+import TokenSelectorWithoutInput from '../TokenSelector/TokenSelectorWithoutInput'
 import CardTab from '../CardTab'
 
 function LiquidityCard({ className, token1, token2 }: any) {

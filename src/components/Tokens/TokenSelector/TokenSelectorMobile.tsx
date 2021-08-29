@@ -8,13 +8,13 @@ import Image from 'next/image'
 import Lottie from 'lottie-react'
 import selectCoinAnimation from '../../../animation/select-coin.json'
 
-function TokenSelectorMobile({ defaultToken }: any) {
+function TokenSelectorMobile({ className, defaultToken }: any) {
   const [tokenValue, setTokenValue] = useState('')
 
   const tokenSelected = defaultToken
 
   return (
-    <div className="w-full py-2 flex flex-col">
+    <div className={classNames('w-full py-2 flex flex-col', className)}>
       <div className="flex space-x-2 text-sm text-secondary">
         <button className="flex items-center text-white font-medium p-1">
           <div>{tokenSelected.symbol}</div>
@@ -31,11 +31,11 @@ function TokenSelectorMobile({ defaultToken }: any) {
             setTokenValue(val)
           }}
         />
-        <button className="px-2 py-1 rounded-full border-blue border border-opacity-50 bg-blue bg-opacity-25 text-blue">
+        <button className="px-2 py-0.5 rounded-full border-blue border border-opacity-50 bg-blue bg-opacity-25 text-blue text-sm">
           MAX
         </button>
       </div>
-      <div className="flex items-center space-x-2 rounded-b bg-dark-800 px-3 py-2 text-xs text-secondary">
+      <div className="flex items-center space-x-2 rounded-b border-b border-dark-900 border-b-2 bg-dark-800 px-3 py-2 text-xs text-secondary">
         <div>
           <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

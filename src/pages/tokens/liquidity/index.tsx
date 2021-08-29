@@ -4,7 +4,7 @@ import BreadcrumbBar from '../../../components/Tokens/BreadcrumbBar'
 import TokensTab from '../../../components/Tokens/TokensTab'
 import Image from 'next/image'
 
-import { ArrowUpIcon } from '@heroicons/react/outline'
+import { ArrowUpIcon, ViewGridIcon, ViewListIcon } from '@heroicons/react/outline'
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
 import { token } from '@sushiswap/sushi-data/typings/exchange'
 import TokenArticle from '../../../components/Tokens/TokenArticle'
@@ -20,6 +20,9 @@ import TokenPairListHeader from '../../../components/Tokens/TokenPairListHeader'
 import TokenPairListRow from '../../../components/Tokens/TokenPairListRow'
 import DoubleGlowShadow from '../../../components/DoubleGlowShadow'
 
+import TokenLPCard from '../../../components/Tokens/TokenLPCard'
+import ActionBar from '../../../components/Tokens/ActionBar'
+
 export default function Liquidity() {
   const tokenInfo = {
     symbol: 'LCRX',
@@ -33,6 +36,8 @@ export default function Liquidity() {
         },
         apy: '22.27',
         tvl: '4,200.01',
+        token1: '1.13',
+        token2: '307.88',
       },
       {
         tokenPair: {
@@ -43,6 +48,8 @@ export default function Liquidity() {
         },
         apy: '22.27',
         tvl: '4,200.01',
+        token1: '3.13',
+        token2: '68.32',
       },
     ],
     topMovingPairs: [
@@ -55,6 +62,8 @@ export default function Liquidity() {
         },
         apy: '22.27',
         tvl: '87,453,210',
+        token1: '1,873.13',
+        token2: '1,892,354.33',
       },
       {
         tokenPair: {
@@ -65,6 +74,8 @@ export default function Liquidity() {
         },
         apy: '21.38',
         tvl: '874,563',
+        token1: '1,873.13',
+        token2: '1,892,354.33',
       },
       {
         tokenPair: {
@@ -75,6 +86,8 @@ export default function Liquidity() {
         },
         apy: '22.27',
         tvl: '87,453,210',
+        token1: '1,873.13',
+        token2: '1,892,354.33',
       },
     ],
   }
@@ -94,7 +107,9 @@ export default function Liquidity() {
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Liquidity']} links={['/tokens', '#']} />
       <TokensTab className="hidden sm:block" defaultTab="1" />
-      <div className="w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
+
+      {/* desktop header */}
+      <div className="hidden lg:block w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
         <div className="lg:grid lg:grid-cols-12 max-w-7xl mx-auto">
           <div className="lg:col-span-7 flex flex-col py-8 ">
             <div className="text-high-emphesis font-bold text-2xl">Manage {tokenInfo.symbol} Liquidity</div>
@@ -111,20 +126,48 @@ export default function Liquidity() {
           </div>
         </div>
       </div>
+
+      {/* mobile header */}
+      <div className="block lg:hidden px-3 mt-8">
+        <div className="text-high-emphesis font-bold text-2xl">Manage {tokenInfo.symbol} Liquidity</div>
+        <div className="mt-5 ml-1 text-primary">
+          When you add liquidity, you will receive pool tokens representing your position. These tokens automatically
+          earn fees proportional to your share of the pool, and can be redeemed at any time.
+        </div>
+      </div>
+
+      {/* body */}
       <div className="relative px-3 md:px-6 lg:px-10 w-full pt-10">
         <div className="lg:grid lg:grid-cols-12 max-w-7xl m-auto h-full">
           <div className="lg:col-span-7 flex flex-col h-full">
             {/* Your Liquidity */}
             <div className="w-full">
-              <div className="text-xl text-white font-medium">Your {tokenInfo.symbol} Liquidity:</div>
-              <TokenPairListHeader columns={['Token Pair', 'APY', 'Your Investment']} />
-              <div className="flex-col space-y-2">
-                {tokenInfo.liquidities.map((pair, i) => (
-                  <TokenPairListRow
+              <div className="flex space-x-1">
+                <div className="flex-1 text-xl text-white font-medium">Your {tokenInfo.symbol} Liquidity:</div>
+                <ViewListIcon className="block lg:hidden w-[25px] h-[25px]" />
+                <ViewGridIcon className="block lg:hidden w-[25px] h-[25px]" />
+              </div>
+              <div className="hidden lg:block">
+                <TokenPairListHeader columns={['Token Pair', 'APY', 'Your Investment']} />
+                <div className="flex-col space-y-2">
+                  {tokenInfo.liquidities.map((pair, i) => (
+                    <TokenPairListRow
+                      key={i}
+                      tokenPair={pair.tokenPair}
+                      apy={pair.apy}
+                      tvl={pair.tvl}
+                      button="Manage"
+                      buttonLink="/tokens/liquidity/lcrx_weth"
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="block lg:hidden flex flex-nowrap space-x-3 overflow-x-auto py-2">
+                {tokenInfo.liquidities.map((liquidity, i) => (
+                  <TokenLPCard
                     key={i}
-                    tokenPair={pair.tokenPair}
-                    apy={pair.apy}
-                    tvl={pair.tvl}
+                    liquidity={liquidity}
+                    label1="Total Deposited"
                     button="Manage"
                     buttonLink="/tokens/liquidity/lcrx_weth"
                   />
@@ -134,29 +177,41 @@ export default function Liquidity() {
 
             {/* top moving pairs */}
             <div className="w-full mt-10">
-              <div className="text-xl text-white font-medium">Top Moving Pairs</div>
-              <TokenPairListHeader columns={['Token Pair', 'APY', 'TVL']} />
-              <div className="flex-col space-y-2">
+              <div className="flex space-x-1">
+                <div className="flex-1 text-xl text-white font-medium">Top Moving Pairs</div>
+                <ViewListIcon className="block lg:hidden w-[25px] h-[25px]" />
+                <ViewGridIcon className="block lg:hidden w-[25px] h-[25px]" />
+              </div>
+              <div className="hidden lg:block">
+                <TokenPairListHeader columns={['Token Pair', 'APY', 'TVL']} />
+                <div className="flex-col space-y-2">
+                  {tokenInfo.topMovingPairs.map((pair, i) => (
+                    <TokenPairListRow
+                      key={i}
+                      tokenPair={pair.tokenPair}
+                      apy={pair.apy}
+                      tvl={pair.tvl}
+                      button="Invest"
+                      buttonLink="#"
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="block lg:hidden flex flex-nowrap space-x-3 overflow-x-auto py-2">
                 {tokenInfo.topMovingPairs.map((pair, i) => (
-                  <TokenPairListRow
-                    key={i}
-                    tokenPair={pair.tokenPair}
-                    apy={pair.apy}
-                    tvl={pair.tvl}
-                    button="Invest"
-                    buttonLink="#"
-                  />
+                  <TokenLPCard key={i} liquidity={pair} label1="TVL" button="Invest" buttonLink="#" />
                 ))}
               </div>
             </div>
           </div>
-          <div className="lg:col-span-5">
+          <div className="hidden lg:block lg:col-span-5">
             <DoubleGlowShadow className="mx-auto">
               <LiquidityCard className="mx-auto mt-10 lg:-mt-80" token1={token1} />
             </DoubleGlowShadow>
           </div>
         </div>
       </div>
+      <ActionBar />
     </Container>
   )
 }
