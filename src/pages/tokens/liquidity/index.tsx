@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { ArrowUpIcon, ViewGridIcon, ViewListIcon } from '@heroicons/react/outline'
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
 import { token } from '@sushiswap/sushi-data/typings/exchange'
-import TokenArticle from '../../../components/Tokens/TokenArticle'
+import TokenArticle from '../../../components/Tokens/TokenArticle/TokenArticle'
 import RelatedListItem from '../../../components/Tokens/RelatedListItem'
 import TokenValueRow from '../../../components/Tokens/TokenValueRow'
 
@@ -106,7 +106,7 @@ export default function Liquidity() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Liquidity']} links={['/tokens', '#']} />
-      <TokensTab className="hidden sm:block" defaultTab="1" />
+      <TokensTab className="hidden lg:block" defaultTab="1" />
 
       {/* desktop header */}
       <div className="hidden lg:block w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">

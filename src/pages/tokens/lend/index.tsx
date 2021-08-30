@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { ExclamationCircleIcon, QuestionMarkCircleIcon } from '@heroicons/react/solid'
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
 import { token } from '@sushiswap/sushi-data/typings/exchange'
-import TokenArticle from '../../../components/Tokens/TokenArticle'
+import TokenArticle from '../../../components/Tokens/TokenArticle/TokenArticle'
 import RelatedListItem from '../../../components/Tokens/RelatedListItem'
 import TokenValueRow from '../../../components/Tokens/TokenValueRow'
 
@@ -171,7 +171,7 @@ export default function Lend() {
             </div>
           </div>
           <div className="lg:col-span-5">
-            <div className="relative w-80 h-[420px] mx-auto mt-10 lg:-mt-72 bg-dark-900 rounded">
+            <div className="relative w-80 h-[420px] mx-auto mt-10 lg:-mt-80 bg-dark-900 rounded">
               <div className="absolute w-full h-full bg-gradient-to-r from-blue to-pink opacity-10"></div>
               <div className="w-full h-full flex items-center justify-center px-10 text-center text-secondary">
                 Select a lending market to get started.

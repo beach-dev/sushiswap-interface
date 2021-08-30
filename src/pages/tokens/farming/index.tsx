@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { ArrowUpIcon } from '@heroicons/react/outline'
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
 import { token } from '@sushiswap/sushi-data/typings/exchange'
-import TokenArticle from '../../../components/Tokens/TokenArticle'
+import TokenArticle from '../../../components/Tokens/TokenArticle/TokenArticle'
 import RelatedListItem from '../../../components/Tokens/RelatedListItem'
 import TokenValueRow from '../../../components/Tokens/TokenValueRow'
 
@@ -78,7 +78,7 @@ export default function Farming() {
         <meta key="description" name="description" content="SushiSwap tokens." />
       </Head>
       <BreadcrumbBar crumbs={['LCRX', 'Farming']} links={['/tokens', '#']} />
-      <TokensTab className="hidden sm:block" defaultTab="2" />
+      <TokensTab className="hidden lg:block" defaultTab="2" />
       {/* header - desktop */}
       <div className="hidden lg:block w-full px-3 md:px-6 lg:px-10 bg-tokens_title_bg bg-opacity-25">
         <div className="lg:grid lg:grid-cols-12 max-w-7xl mx-auto">

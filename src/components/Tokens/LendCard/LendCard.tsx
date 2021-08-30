@@ -3,7 +3,7 @@ import { classNames } from '../../../functions'
 import { PlusIcon } from '@heroicons/react/outline'
 import TokenSelector from '../TokenSelector/TokenSelector'
 import TokenSelectorWithoutInput from '../TokenSelector/TokenSelectorWithoutInput'
-import TokenSwitch from './TokenSwitch'
+import TokenSwitch from '../TokenSwitch'
 import CardTab from '../CardTab'
 
 function LendCard({ className, token }: any) {
@@ -16,7 +16,7 @@ function LendCard({ className, token }: any) {
       <div className="bg-dark-800 rounded">
         <div className="bg-dark-900 flex p-4">
           <div className="flex-1 text-primary text-sm">Deposit From:</div>
-          <TokenSwitch options={['BentoBox', 'Wallet']} />
+          <TokenSwitch options={['BentoBox', 'Wallet']} state={true} OnChange={() => {}} />
         </div>
         <div className="relative h-[150px]">
           <TokenSelector caption="Lend LCRX:" oddColor="true" defaultToken={token} />

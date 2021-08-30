@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
 import { token } from '@sushiswap/sushi-data/typings/exchange'
-import TokenArticle from '../../../components/Tokens/TokenArticle'
+import TokenArticle from '../../../components/Tokens/TokenArticle/TokenArticle'
 import RelatedListItem from '../../../components/Tokens/RelatedListItem'
 import TokenValueRow from '../../../components/Tokens/TokenValueRow'
 

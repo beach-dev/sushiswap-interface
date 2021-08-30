@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function RelatedListItem({ item }: { item: any }) {
   return (
-    <div className="h-15 p-1 flex items-center space-x-3 rounded-full border border-dark-700">
+    <div className="h-15 p-1 flex items-center space-x-3 rounded-full border border-dark-700 flex-auto flex-grow-0 flex-shrink-0">
       <Image src={item.imageUrl} width={40} height={40} objectFit="cover" />
       <div className="">{item.title}</div>
       <div className="w-3"></div>
