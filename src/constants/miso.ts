@@ -225,3 +225,34 @@ export const SUSHI_ADDRESS: {
 export const DAI_MISO_FEE_ACCT = '0x2a3070d384f2871c4fddf05f4c5dd9b6272fb54c'
 
 export const ETH_TOKEN_ADDRESS = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
+
+export const PERMISSION_LIST_ADDRESS: {
+  [chainId in ChainId]?: string
+} = {
+  [ChainId.MAINNET]: '0x4032CF96eCDA6618f4cf4A4c8c80E43aB7668394',
+  [ChainId.ROPSTEN]: '0x3e2679B15eeBebd94Cb7b51875AA9Eaf68b48414',
+  [ChainId.RINKEBY]: '',
+  [ChainId.GÖRLI]: '',
+  [ChainId.KOVAN]: '',
+  [ChainId.FANTOM]: '',
+  [ChainId.FANTOM_TESTNET]: '',
+  [ChainId.MATIC]: '',
+  [ChainId.MATIC_TESTNET]: '',
+  [ChainId.XDAI]: '',
+  [ChainId.BSC]: '',
+  [ChainId.BSC_TESTNET]: '',
+  [ChainId.ARBITRUM]: '',
+  [ChainId.ARBITRUM_TESTNET]: '',
+  [ChainId.MOONBEAM_TESTNET]: '',
+  [ChainId.AVALANCHE]: '',
+  [ChainId.AVALANCHE_TESTNET]: '',
+  [ChainId.HECO]: '',
+  [ChainId.HECO_TESTNET]: '',
+  [ChainId.HARMONY]: '',
+  [ChainId.HARMONY_TESTNET]: '',
+  [ChainId.OKEX]: '',
+  [ChainId.OKEX_TESTNET]: '',
+  [ChainId.CELO]: '',
+  [ChainId.PALM]: '',
+  [ChainId.PALM_TESTNET]: '',
+}

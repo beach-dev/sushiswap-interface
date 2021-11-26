@@ -4,7 +4,12 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { useMarketTemplate, getMarketTemplate } from './useAuctionInfo'
 
-import { MISO_HELPER_ADDRESS, TOKEN_FACTORY_ADDRESS, MISO_MARKET_ADDRESS } from '../../constants/miso'
+import {
+  MISO_HELPER_ADDRESS,
+  TOKEN_FACTORY_ADDRESS,
+  MISO_MARKET_ADDRESS,
+  PERMISSION_LIST_ADDRESS,
+} from '../../constants/miso'
 import BATCH_AUCTION_ABI from '../../constants/abis/batch-auction.json'
 import CROWDSALE_ABI from '../../constants/abis/crowdsale.json'
 import DUTCH_AUCITON_ABI from '../../constants/abis/dutch-auction.json'
@@ -12,6 +17,7 @@ import MISO_HELPER_ABI from '../../constants/abis/miso-helper.json'
 import MISO_MARKET_ABI from '../../constants/abis/miso-market.json'
 import POST_AUCTION_LAUNCHER_ABI from '../../constants/abis/post-auction-launcher.json'
 import TOKEN_FACTORY_ABI from '../../constants/abis/token-factory.json'
+import PERMISSION_LIST_ABI from '../../constants/abis/permission-list-factory.json'
 import { getContract } from '../../functions/contract'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useContract } from '../../hooks/useContract'
@@ -170,4 +176,9 @@ export function getPostAuctionLauncherContract(
     console.error('Failed to get contract', error)
     return null
   }
+}
+
+export function usePermissionListFactoryContract(withSignerIfPossible = true): Contract | null {
+  const { chainId } = useActiveWeb3React()
+  return useContract(chainId && PERMISSION_LIST_ADDRESS[chainId], PERMISSION_LIST_ABI, withSignerIfPossible)
 }
