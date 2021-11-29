@@ -16,7 +16,7 @@ import Input from '../../../features/miso/Input'
 import Radio from '../../../features/miso/Radio'
 import TokenSelect from '../../../features/miso/TokenSelect'
 import { tryParseAmount } from '../../../functions/parse'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../../services/web3'
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
 import Layout from '../../../layouts/Miso'
 import childrenWithProps from '../../../layouts/Miso/children'
@@ -175,14 +175,14 @@ function CreateAuction({ pageIndex, movePage }) {
       <div>
         {pageIndex === 0 && (
           <div>
-            <div className="flex flex-row items-start bg-purple bg-opacity-20 mt-2 p-3 rounded">
+            <div className="flex flex-row items-start p-3 mt-2 rounded bg-purple bg-opacity-20">
               <ExclamationCircleIconSolid className="w-12 mt-1 mr-2 text-purple" aria-hidden="true" />
               <Typography>
                 {i18n._(t`Choose which type of auction you’d like to hold. Each of the three types has their own unique
                 characteristics, so choose the one you think is most appropriate for your project. Need more information
                 on what these mean, and which is best for you? Read our documentation`)}
                 <ExternalLink href="https://instantmiso.gitbook.io/miso/markets/markets">
-                  <Typography component="span" className="text-blue ml-1">
+                  <Typography component="span" className="ml-1 text-blue">
                     {i18n._(t`here`)}
                   </Typography>
                 </ExternalLink>
@@ -206,7 +206,7 @@ function CreateAuction({ pageIndex, movePage }) {
                   )}
                 </div>
                 <div className="flex flex-row items-start mt-3">
-                  <ExclamationCircleIconOutline className="w-4 mr-2 mt-1" aria-hidden="true" />
+                  <ExclamationCircleIconOutline className="w-4 mt-1 mr-2" aria-hidden="true" />
                   <div className="flex-1 italic">
                     {i18n._(t`Great for a completely novel item’s true price discovery`)}
                   </div>
@@ -227,7 +227,7 @@ function CreateAuction({ pageIndex, movePage }) {
                   according to their contribution to the pool.`)}
                 </div>
                 <div className="flex flex-row items-start mt-3">
-                  <ExclamationCircleIconOutline className="w-4 mr-2 mt-1" aria-hidden="true" />
+                  <ExclamationCircleIconOutline className="w-4 mt-1 mr-2" aria-hidden="true" />
                   <div className="flex-1 italic">
                     {i18n._(t`Great for projects looking to ensure that everyone taking part is rewarded`)}
                   </div>
@@ -245,7 +245,7 @@ function CreateAuction({ pageIndex, movePage }) {
                 />
                 <div>{i18n._(t`A fixed price and a fixed set of tokens.`)}</div>
                 <div className="flex flex-row items-start mt-3">
-                  <ExclamationCircleIconOutline className="w-4 mr-2 mt-1" aria-hidden="true" />
+                  <ExclamationCircleIconOutline className="w-4 mt-1 mr-2" aria-hidden="true" />
                   <div className="flex-1 italic">
                     {i18n._(t`Great when the token price is already known or has been decided on previously`)}
                   </div>
@@ -314,7 +314,7 @@ function CreateAuction({ pageIndex, movePage }) {
                   alert="This will be the number of tokens you will put into the auction contract. Please consider this carefully."
                   hint={
                     <div
-                      className="text-blue underline ml-2 cursor-pointer text-sm"
+                      className="ml-2 text-sm underline cursor-pointer text-blue"
                       onClick={() => setFundWallet(account)}
                     >
                       Use My Account
@@ -359,7 +359,7 @@ function CreateAuction({ pageIndex, movePage }) {
         {pageIndex === 2 && (
           <div>
             <div className="mb-16">
-              <Typography variant="h3" className="text-primary font-bold">
+              <Typography variant="h3" className="font-bold text-primary">
                 {i18n._(t`Confirm Your Auction Setup`)}
               </Typography>
               <div className="grid grid-cols-12 gap-10 mt-3">
@@ -390,10 +390,10 @@ function CreateAuction({ pageIndex, movePage }) {
                   />
                   <ConfirmAuctionRow title="Fund Wallet" toCopy={fundWallet} showCopy />
 
-                  <Typography className="text-secondary font-bold my-1">{i18n._(t`Price Settings`)}*</Typography>
-                  <div className="grid grid-cols-2 gap-8 text-primary mb-2">
+                  <Typography className="my-1 font-bold text-secondary">{i18n._(t`Price Settings`)}*</Typography>
+                  <div className="grid grid-cols-2 gap-8 mb-2 text-primary">
                     <div>
-                      <Typography variant="sm" className="text-primary mb-1">
+                      <Typography variant="sm" className="mb-1 text-primary">
                         {i18n._(`STARTING PRICE`)}
                       </Typography>
                       <Typography className="rounded bg-dark-900 px-4 py-0.5">
@@ -402,23 +402,23 @@ function CreateAuction({ pageIndex, movePage }) {
                     </div>
                     <div className="flex items-start">
                       <div className="flex flex-col items-center">
-                        <div className="flex space-x-1 mb-1">
+                        <div className="flex mb-1 space-x-1">
                           <ArrowSmRightIcon className="text-secondary w-[20px] h-[20px] transform rotate-45" />
                           <Typography variant="sm" className="text-primary">
                             {i18n._(`MAXIMUM RAISED`)}
                           </Typography>
                         </div>
-                        <Typography variant="sm" className="rounded bg-blue bg-opacity-50 px-2">
+                        <Typography variant="sm" className="px-2 bg-opacity-50 rounded bg-blue">
                           {i18n._(`${tokenAmount * parseFloat(startingPrice)} ${paymentCurrency.symbol}`)}
                         </Typography>
                       </div>
                     </div>
                   </div>
 
-                  <Typography className="text-secondary font-bold my-1">{i18n._(t`Price Settings`)}*</Typography>
-                  <div className="grid grid-cols-2 gap-8 text-primary mb-2">
+                  <Typography className="my-1 font-bold text-secondary">{i18n._(t`Price Settings`)}*</Typography>
+                  <div className="grid grid-cols-2 gap-8 mb-2 text-primary">
                     <div>
-                      <Typography variant="sm" className="text-primary mb-1">
+                      <Typography variant="sm" className="mb-1 text-primary">
                         {i18n._(`ENDING PRICE`)}
                       </Typography>
                       <Typography className="rounded bg-dark-900 px-4 py-0.5">
@@ -427,13 +427,13 @@ function CreateAuction({ pageIndex, movePage }) {
                     </div>
                     <div className="flex items-start">
                       <div className="flex flex-col items-center">
-                        <div className="flex space-x-1 mb-1">
+                        <div className="flex mb-1 space-x-1">
                           <ArrowSmRightIcon className="text-secondary w-[20px] h-[20px] transform rotate-45" />
                           <Typography variant="sm" className="text-primary">
                             {i18n._(`MINIMUM RAISED`)}
                           </Typography>
                         </div>
-                        <Typography variant="sm" className="rounded bg-blue bg-opacity-50 px-2">
+                        <Typography variant="sm" className="px-2 bg-opacity-50 rounded bg-blue">
                           {i18n._(`${tokenAmount * parseFloat(endingPrice)} ${paymentCurrency.symbol}`)}
                         </Typography>
                       </div>
@@ -463,10 +463,10 @@ function CreateAuction({ pageIndex, movePage }) {
               <ExternalLink className="underline" color="blue" href={getExplorerLink(chainId, tx.hash, 'transaction')}>
                 {i18n._(t`View on Explorer`)}
               </ExternalLink>
-              <Typography variant="lg" weight={700} className="text-secondary mt-10">
+              <Typography variant="lg" weight={700} className="mt-10 text-secondary">
                 {i18n._(t`Auction Contract Address`)}
               </Typography>
-              <Typography variant="base" className="text-primary mt-2">
+              <Typography variant="base" className="mt-2 text-primary">
                 {i18n._(t`You can view the auction address here once the transaction is completed`)}
               </Typography>
               <div className="flex flex-row gap-8 mt-8">
@@ -488,19 +488,19 @@ function CreateAuction({ pageIndex, movePage }) {
             </div>
             <div className="flex flex-col items-start">
               <div className="flex-1"></div>
-              <div className="flex space-x-1 items-end mb-1 border-b border-b-2 border-primary">
+              <div className="flex items-end mb-1 space-x-1 border-b border-b-2 border-primary">
                 <Typography variant="lg" className="text-primary">
                   {i18n._(t`Create a Permission List`)}
                 </Typography>
                 <ArrowSmRightIcon className="text-secondary w-[30px] h-[30px] transform rotate-45" />
               </div>
-              <div className="flex space-x-1 items-end mb-1 border-b border-b-2 border-primary mt-5">
+              <div className="flex items-end mt-5 mb-1 space-x-1 border-b border-b-2 border-primary">
                 <Typography variant="lg" className="text-primary">
                   {i18n._(t`Set Up a Liquidity Launcher`)}
                 </Typography>
                 <ArrowSmRightIcon className="text-secondary w-[30px] h-[30px] transform rotate-45" />
               </div>
-              <div className="flex space-x-1 items-end mb-1 border-b border-b-2 border-primary mt-5">
+              <div className="flex items-end mt-5 mb-1 space-x-1 border-b border-b-2 border-primary">
                 <Typography variant="lg" className="text-primary">
                   {i18n._(t`Go To Marketplace`)}
                 </Typography>

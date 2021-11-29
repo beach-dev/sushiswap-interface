@@ -9,7 +9,7 @@ import {
 } from './useContracts'
 
 import { BAD_AUCTIONS, DAI_MISO_FEE_ACCT, ETH_TOKEN_ADDRESS } from '../../constants/miso'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import { useBlockNumber } from '../../state/application/hooks'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 

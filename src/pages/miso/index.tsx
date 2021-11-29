@@ -18,7 +18,7 @@ import AuctionRow from '../../features/miso/AuctionRow'
 import { useEffect, useState } from 'react'
 import { useListTokens } from '../../hooks/miso/useTokens'
 import TokenRow from '../../features/miso/TokenRow'
-import { useActiveWeb3React } from '../../hooks'
+import { useActiveWeb3React } from '../../services/web3'
 
 function Launchpad() {
   const { account, chainId } = useActiveWeb3React()
@@ -44,7 +44,7 @@ function Launchpad() {
         <Typography variant="lg" weight={700}>
           {i18n._(t`Factory Options`)}
         </Typography>
-        <div className="mt-3 grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-4 gap-5 mt-3">
           <div className="cursor-pointer">
             <NavLink href="/miso/create-token">
               <div>
@@ -82,15 +82,15 @@ function Launchpad() {
           </Typography>
           <NavLink href="/miso/create-auction">
             <div>
-              <Typography variant="sm" className="text-blue cursor-pointer">
+              <Typography variant="sm" className="cursor-pointer text-blue">
                 {i18n._(t`Set Up Auction`)}
               </Typography>
             </div>
           </NavLink>
         </div>
-        <div className="mt-3 bg-dark-900 rounded overflow-hidden border-dark-700 border">
+        <div className="mt-3 overflow-hidden border rounded bg-dark-900 border-dark-700">
           {auctions.length == 0 ? (
-            <div className="text-center py-10">
+            <div className="py-10 text-center">
               <div className="w-6 m-auto">
                 <Image src={loadingIndicator} layout="responsive" alt="loading..." />
               </div>
@@ -99,7 +99,7 @@ function Launchpad() {
                 <Typography>{i18n._(t`Please start by`)}</Typography>
                 <NavLink href="/miso/create-auction">
                   <div>
-                    <Typography className="text-blue ml-1">{i18n._(t`setting up a new auction`)}</Typography>
+                    <Typography className="ml-1 text-blue">{i18n._(t`setting up a new auction`)}</Typography>
                   </div>
                 </NavLink>
                 .
@@ -107,7 +107,7 @@ function Launchpad() {
             </div>
           ) : (
             <div className="">
-              <div className="grid grid-cols-6 auto-cols-min bg-dark-800 px-5 py-3">
+              <div className="grid grid-cols-6 px-5 py-3 auto-cols-min bg-dark-800">
                 <Typography variant="sm" className=" text-secondary">
                   {i18n._(t`Auction`)}
                 </Typography>
@@ -156,9 +156,9 @@ function Launchpad() {
             </div>
           </NavLink>
         </div>
-        <div className="mt-3 bg-dark-900 rounded overflow-hidden border-dark-700 border">
+        <div className="mt-3 overflow-hidden border rounded bg-dark-900 border-dark-700">
           {tokens.length == 0 ? (
-            <div className="text-center py-10">
+            <div className="py-10 text-center">
               <div className="w-6 m-auto">
                 <Image src={loadingIndicator} layout="responsive" alt="loading..." />
               </div>
@@ -167,7 +167,7 @@ function Launchpad() {
                 <Typography>{i18n._(t`Please start by`)}</Typography>
                 <NavLink href="/miso/create-token">
                   <div>
-                    <Typography className="text-blue ml-1">{i18n._(t`creating a new token`)}</Typography>
+                    <Typography className="ml-1 text-blue">{i18n._(t`creating a new token`)}</Typography>
                   </div>
                 </NavLink>
                 .
@@ -175,7 +175,7 @@ function Launchpad() {
             </div>
           ) : (
             <div className="">
-              <div className="grid grid-cols-6 auto-cols-min bg-dark-800 px-5 py-3">
+              <div className="grid grid-cols-6 px-5 py-3 auto-cols-min bg-dark-800">
                 <Typography variant="sm" className=" text-secondary">
                   {i18n._(t`Token`)}
                 </Typography>

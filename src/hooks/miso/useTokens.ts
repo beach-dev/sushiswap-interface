@@ -1,11 +1,11 @@
 import { defaultAbiCoder } from '@ethersproject/abi'
 import { parseEther } from '@ethersproject/units'
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@sushiswap/core-sdk'
 import { useCallback, useEffect, useState } from 'react'
 
 import { useMisoHelperContract, useTokenFactoryContract } from './useContracts'
 
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import { useBlockNumber } from '../../state/application/hooks'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 

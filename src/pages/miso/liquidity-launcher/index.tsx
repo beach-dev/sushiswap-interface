@@ -16,7 +16,7 @@ import Input from '../../../features/miso/Input'
 import Radio from '../../../features/miso/Radio'
 import TokenSelect from '../../../features/miso/TokenSelect'
 import { tryParseAmount } from '../../../functions/parse'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../../services/web3'
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
 import Layout from '../../../layouts/Miso'
 import childrenWithProps from '../../../layouts/Miso/children'
@@ -101,7 +101,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
                 alert="Enter the wallet address used to create this token on MISO.  This enables you launch liquidity on SUSHI, and is needed for administrative actions like defining permission lists, setting token distribution percentages, and lockup timelines."
                 hint={
                   <div
-                    className="text-blue underline ml-2 cursor-pointer text-sm"
+                    className="ml-2 text-sm underline cursor-pointer text-blue"
                     onClick={() => setAdminAddress(account)}
                   >
                     Use My Account
@@ -120,7 +120,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
                 This enables us to import data from the auction to facilitate the launching process."
                 hint={
                   <div
-                    className="text-blue underline ml-2 cursor-pointer text-sm"
+                    className="ml-2 text-sm underline cursor-pointer text-blue"
                     onClick={() => setAuctionAddress(account)}
                   >
                     Use My Account
@@ -138,7 +138,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
                 alert="Enter the wallet address to create SLP tokens and any remaining base pair tokens.  This can be the admin address, or any other wallet address you have access to."
                 hint={
                   <div
-                    className="text-blue underline ml-2 cursor-pointer text-sm"
+                    className="ml-2 text-sm underline cursor-pointer text-blue"
                     onClick={() => setVaultAddress(account)}
                   >
                     Use My Account
@@ -161,22 +161,22 @@ function LiquidityLauncher({ pageIndex, movePage }) {
         {pageIndex === 1 && (
           <div>
             <div className="pr-3 mr-[200px]">
-              <div className="flex space-x-4 items-center">
-                <Typography className="text-primary text-xl">{i18n._(t`Liquidity Pair Token*`)}</Typography>
+              <div className="flex items-center space-x-4">
+                <Typography className="text-xl text-primary">{i18n._(t`Liquidity Pair Token*`)}</Typography>
                 <div className="text-primary text-sm rounded bg-blue bg-opacity-50 px-3 py-0.5">
                   {token.symbol} + {pairToken.symbol}
                 </div>
               </div>
               <PaymentOption className="mt-2" title="ETHEREUM" selected={true} />
-              <Typography className="mt-3 text-secondary text-sm">
+              <Typography className="mt-3 text-sm text-secondary">
                 {i18n._(t`The base pair token is set to the payment currency from your auction.`)}
               </Typography>
             </div>
 
             <div className="pr-3 mr-[200px] mt-8">
-              <Typography className="text-primary text-xl">{i18n._(t`Liquidity Provisioning Setup*`)}</Typography>
+              <Typography className="text-xl text-primary">{i18n._(t`Liquidity Provisioning Setup*`)}</Typography>
 
-              <div className="mt-3 grid grid-cols-2">
+              <div className="grid grid-cols-2 mt-3">
                 <div>
                   <Typography className="text-secondary">{i18n._(t`Your Token Balance`)}</Typography>
                   <Typography className="text-primary">
@@ -228,7 +228,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
         )}
         {pageIndex === 2 && (
           <div>
-            <Typography variant="h3" className="text-primary font-bold">
+            <Typography variant="h3" className="font-bold text-primary">
               {i18n._(t`Confirm Your Post Auction Liquidity Launcher`)}
             </Typography>
             <div className="grid grid-cols-12 gap-10 mt-3">
@@ -247,7 +247,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
                   )}
                 </Typography>
 
-                <Typography variant="lg" className="mt-10 text-secondary font-bold">
+                <Typography variant="lg" className="mt-10 font-bold text-secondary">
                   {i18n._(t`Liquidity Lockup Timeline`)}*
                 </Typography>
                 <Typography className="text-primary">
@@ -255,7 +255,7 @@ function LiquidityLauncher({ pageIndex, movePage }) {
                 </Typography>
               </div>
               <div className="col-span-5">
-                <Typography className="text-secondary font-bold my-1 mb-5">
+                <Typography className="my-1 mb-5 font-bold text-secondary">
                   {i18n._(t`Connected Addresses`)}*
                 </Typography>
                 <ConfirmAuctionRow title="Admin Address" toCopy={adminAddress} showCopy />
@@ -314,19 +314,19 @@ function LiquidityLauncher({ pageIndex, movePage }) {
             <Typography variant="h3" className="text-high-emphesis">
               {i18n._(t`Your Post Auction Liquidity Launcher is deployed and activated!`)}
             </Typography>
-            <div className="mt-8 flex space-x-1 items-end mb-1 border-b border-b-2 border-primary">
+            <div className="flex items-end mt-8 mb-1 space-x-1 border-b border-b-2 border-primary">
               <Typography variant="lg" className="text-primary">
                 {i18n._(t`Create a Permission List`)}
               </Typography>
               <ArrowSmRightIcon className="text-primary w-[30px] h-[30px] transform rotate-45" />
             </div>
-            <div className="flex space-x-1 items-end mb-1 border-b border-b-2 border-primary mt-5">
+            <div className="flex items-end mt-5 mb-1 space-x-1 border-b border-b-2 border-primary">
               <Typography variant="lg" className="text-primary">
                 {i18n._(t`View This Auction`)}
               </Typography>
               <ArrowSmRightIcon className="text-primary w-[30px] h-[30px] transform rotate-45" />
             </div>
-            <div className="flex space-x-1 items-end mb-1 border-b border-b-2 border-primary mt-5">
+            <div className="flex items-end mt-5 mb-1 space-x-1 border-b border-b-2 border-primary">
               <Typography variant="lg" className="text-primary">
                 {i18n._(t`Go To Marketplace`)}
               </Typography>

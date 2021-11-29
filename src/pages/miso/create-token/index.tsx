@@ -13,7 +13,7 @@ import Divider from '../../../features/miso/Divider'
 import Input from '../../../features/miso/Input'
 import Radio from '../../../features/miso/Radio'
 import { getExplorerLink } from '../../../functions/explorer'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../../services/web3'
 import useCopyClipboard from '../../../hooks/useCopyClipboard'
 import useTokens from '../../../hooks/miso/useTokens'
 import Layout from '../../../layouts/Miso'
@@ -32,7 +32,7 @@ function TokenInfo({ label, value }) {
   return (
     <div className="mr-12">
       <Typography>{i18n._(`${label}`)}</Typography>
-      <Typography className="mt-2 py-2 px-5 rounded bg-dark-800">{value}</Typography>
+      <Typography className="px-5 py-2 mt-2 rounded bg-dark-800">{value}</Typography>
     </div>
   )
 }
@@ -215,10 +215,10 @@ function CreateToken({ pageIndex, movePage }) {
           <>
             {txState < 2 && (
               <div>
-                <Typography variant="h3" weight={700} className="text-white mb-5">
+                <Typography variant="h3" weight={700} className="mb-5 text-white">
                   {i18n._(t`Confirm Your Token Setup`)}
                 </Typography>
-                <div className="mb-16 grid grid-cols-2 gap-5">
+                <div className="grid grid-cols-2 gap-5 mb-16">
                   <TokenInfo label="Token Type*" value={tokenType} />
                   <TokenInfo label="Initiali Supply*" value={tokenInitialSupply} />
                   <TokenInfo label="Token Name*" value={tokenName} />
@@ -241,7 +241,7 @@ function CreateToken({ pageIndex, movePage }) {
                       onClick={() => deployToken()}
                       disabled={txState === 1}
                     >
-                      {txState === 1 && <Lottie animationData={loadingCircle} autoplay loop className="mr-2 w-5" />}
+                      {txState === 1 && <Lottie animationData={loadingCircle} autoplay loop className="w-5 mr-2" />}
                       {i18n._(t`Deploy`)}
                     </Button>
                   ) : (
@@ -252,7 +252,7 @@ function CreateToken({ pageIndex, movePage }) {
             )}
             {txState === 2 && (
               <div>
-                <Typography variant="h3" weight={700} className="text-white mb-3">
+                <Typography variant="h3" weight={700} className="mb-3 text-white">
                   {i18n._(t`Your Transaction is submitted...`)}
                 </Typography>
                 <div className="mb-12">
@@ -286,7 +286,7 @@ function CreateToken({ pageIndex, movePage }) {
             )}
             {txState === 3 && (
               <div>
-                <div className="text-2xl text-white font-bold mb-3">{i18n._(t`Transaction Completed!`)}</div>
+                <div className="mb-3 text-2xl font-bold text-white">{i18n._(t`Transaction Completed!`)}</div>
                 <div className="mb-12">
                   <ExternalLink
                     className="underline"
@@ -326,7 +326,7 @@ function CreateToken({ pageIndex, movePage }) {
             )}
             {txState === 4 && (
               <div>
-                <div className="text-2xl text-white font-bold mb-3">{i18n._(t`Transaction Failed!`)}</div>
+                <div className="mb-3 text-2xl font-bold text-white">{i18n._(t`Transaction Failed!`)}</div>
                 <div className="mb-12">
                   <ExternalLink
                     className="underline"

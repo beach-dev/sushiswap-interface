@@ -15,8 +15,8 @@ import { formatUnits } from '@ethersproject/units'
 
 import { clearingPrice, tokenPrice } from './helper/dutch'
 import { CheckCircleIcon } from '@heroicons/react/solid'
-import { useUSDCPrice } from '../../hooks'
 import NavLink from '../../components/NavLink'
+import useUSDCPrice from 'src/hooks/useUSDCPrice'
 
 export default function AuctionRow({ auction, timestamp }: any) {
   const { i18n } = useLingui()

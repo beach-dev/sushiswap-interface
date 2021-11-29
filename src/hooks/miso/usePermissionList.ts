@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { useMisoHelperContract, usePermissionListFactoryContract } from './useContracts'
 
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import { useBlockNumber } from '../../state/application/hooks'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import { getContract } from '../../functions'

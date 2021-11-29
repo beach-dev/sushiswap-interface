@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 
 import Typography from '../../../components/Typography'
 import Input from '../../../features/miso/Input'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../../services/web3'
 import Layout from '../../../layouts/Miso'
 import childrenWithProps from '../../../layouts/Miso/children'
 import { socialsPlaceholder } from '../../../components/SocialPlaceholder'
@@ -291,10 +291,10 @@ function EditAuction({ pageIndex, movePage }) {
                 actionTitle="Update"
                 actionVisible={true}
                 hint={
-                  <div className="text-secondary flex items-center space-x-5">
+                  <div className="flex items-center space-x-5 text-secondary">
                     <b>{i18n._(t`Status`)}</b>: {i18n._(`${permissionListStatus ? 'Active' : 'Inactive'}`)}
                     <div
-                      className="text-blue underline ml-2 cursor-pointer text-sm"
+                      className="ml-2 text-sm underline cursor-pointer text-blue"
                       onClick={() => handleEnablePermissionList()}
                     >
                       {permissionListStatus ? 'Disable' : 'Enable'}
@@ -314,7 +314,7 @@ function EditAuction({ pageIndex, movePage }) {
                 actionTitle="Update"
                 actionVisible={true}
               />
-              <Typography className="text-secondary text-base">{i18n._(t`Warning Message*`)}</Typography>
+              <Typography className="text-base text-secondary">{i18n._(t`Warning Message*`)}</Typography>
               <Input
                 value={warningMessage}
                 type="textarea"
@@ -326,7 +326,7 @@ function EditAuction({ pageIndex, movePage }) {
               />
             </div>
             <div>
-              <Typography className="text-primary text-xl">{i18n._(t`Cancel Auction`)}</Typography>
+              <Typography className="text-xl text-primary">{i18n._(t`Cancel Auction`)}</Typography>
               <Typography className="mt-2 text-secondary">
                 {i18n._(t`The Auction can only be cancelled by the admin before the start date.`)}
               </Typography>
@@ -334,7 +334,7 @@ function EditAuction({ pageIndex, movePage }) {
                 className="w-[142px] px-5 py-2 mt-8 bg-gradient-to-r rounded-lg from-blue to-pink text-high-emphesis"
                 onClick={handleCancelAuction}
               >
-                <Typography className="text-high-emphesis text-base">{i18n._(t`Cancel`)}</Typography>
+                <Typography className="text-base text-high-emphesis">{i18n._(t`Cancel`)}</Typography>
               </button>
             </div>
           </div>
@@ -378,11 +378,11 @@ function EditAuction({ pageIndex, movePage }) {
                 actionVisible={false}
                 description="The admin will be able to withdraw the remaining deposits in liquidity launcher when the auction is finalized or when the liquidity launcher is canceled."
               />
-              <Typography weight={700} className="text-secondary text-base">
+              <Typography weight={700} className="text-base text-secondary">
                 {i18n._(t`Liquidity Launcher Balance`)}
               </Typography>
               <div className="flex items-center">
-                <div className="flex-1 flex space-x-5">
+                <div className="flex flex-1 space-x-5">
                   <Typography className="inline-block text-primary text-sm rounded bg-blue bg-opacity-50 px-3 py-0.5">
                     {i18n._(`${numberWithCommas(ethAmount)} ${ethCurrency}`)}
                   </Typography>
@@ -396,7 +396,7 @@ function EditAuction({ pageIndex, movePage }) {
                     className="w-[142px] px-5 py-2 bg-gradient-to-r rounded-lg from-blue to-pink text-high-emphesis"
                     onClick={handleWithdrawLiquidity}
                   >
-                    <Typography className="text-high-emphesis text-base">{i18n._(t`Withdrawl`)}</Typography>
+                    <Typography className="text-base text-high-emphesis">{i18n._(t`Withdrawl`)}</Typography>
                   </button>
                 </div>
               </div>

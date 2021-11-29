@@ -19,7 +19,7 @@ import POST_AUCTION_LAUNCHER_ABI from '../../constants/abis/post-auction-launche
 import TOKEN_FACTORY_ABI from '../../constants/abis/token-factory.json'
 import PERMISSION_LIST_ABI from '../../constants/abis/permission-list-factory.json'
 import { getContract } from '../../functions/contract'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import { useContract } from '../../hooks/useContract'
 
 function getCrowdsaleContract(

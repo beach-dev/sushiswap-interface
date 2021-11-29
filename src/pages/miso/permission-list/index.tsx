@@ -20,7 +20,7 @@ import Input from '../../../features/miso/Input'
 import Radio from '../../../features/miso/Radio'
 import TokenSelect from '../../../features/miso/TokenSelect'
 import { tryParseAmount } from '../../../functions/parse'
-import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../../services/web3'
 import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCallback'
 import Layout from '../../../layouts/Miso'
 import childrenWithProps from '../../../layouts/Miso/children'
@@ -62,7 +62,7 @@ function PermissionList({ pageIndex, movePage }) {
 
   const [addressPack, setAddressPack] = useState(null)
 
-  const [permissionListAddress, setPermissionListAddress] = useState('0xe20b33d4edf4cb217b3f951f4b717884348296a9')
+  const [permissionListAddress, setPermissionListAddress] = useState('')
 
   const [activationDialog, setActivationDialog] = useState(false)
   const { deployPermissionList, addNewDeployList } = usePermissionList()
@@ -383,7 +383,7 @@ function PermissionList({ pageIndex, movePage }) {
 }
 
 const PermissionListLayout = ({ children }) => {
-  const [pageIndex, movePage] = useState(1)
+  const [pageIndex, movePage] = useState(0)
 
   return (
     <Layout
