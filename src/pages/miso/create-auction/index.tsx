@@ -2,7 +2,7 @@ import { ArrowSmRightIcon, ExclamationCircleIcon as ExclamationCircleIconOutline
 import { ExclamationCircleIcon as ExclamationCircleIconSolid } from '@heroicons/react/solid'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Currency, Token } from '@sushiswap/sdk'
+import { Currency, Token } from '@sushiswap/core-sdk'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 

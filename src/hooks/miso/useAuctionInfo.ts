@@ -7,12 +7,17 @@ import { useCallback, useEffect, useState } from 'react'
 import { useAuctionContract, useMisoHelperContract } from './useContracts'
 
 import BASE_AUCTION_ABI from '../../constants/abis/base-auction.json'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import { useContract } from '../../hooks/useContract'
 import { getContract } from '../../functions/contract'
 
 export const useMarketTemplate = (auctionAddress: string) => {
-  const auctionAddressChecksum = getAddress(auctionAddress)
+  let auctionAddressChecksum = null
+  try {
+    auctionAddressChecksum = getAddress(auctionAddress)
+  } catch (error) {
+    console.log('auction address invalid')
+  }
   const auctionContract = useContract(auctionAddressChecksum ? auctionAddress : undefined, BASE_AUCTION_ABI, false) // withoutSigner
 
   const [marketTemplate, setMarketTemplate] = useState('0')

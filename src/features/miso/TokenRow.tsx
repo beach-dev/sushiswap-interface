@@ -15,7 +15,6 @@ import { formatUnits } from '@ethersproject/units'
 
 import { clearingPrice, tokenPrice } from './helper/dutch'
 import { CheckCircleIcon } from '@heroicons/react/solid'
-import { useUSDCPrice } from '../../hooks'
 import NavLink from '../../components/NavLink'
 
 export default function TokenRow({ token }: any) {

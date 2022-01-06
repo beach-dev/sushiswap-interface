@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { Token } from '@sushiswap/sdk'
+import { Token } from '@sushiswap/core-sdk'
 import { TokenInfo } from '@uniswap/token-lists'
 import React from 'react'
 
@@ -13,7 +13,7 @@ import Typography from '../../components/Typography'
 import { useSortedTokensByQuery } from '../../functions/filtering'
 import { isAddress } from '../../functions/validate'
 import { useListTokens } from '../../hooks/miso/useTokens'
-import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useActiveWeb3React } from '../../services/web3'
 import useDebounce from '../../hooks/useDebounce'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { useTokenBalance } from '../../state/wallet/hooks'
@@ -58,7 +58,7 @@ function TokenRow({ token, onClick }: { token: Token; onClick: (selectedToken: T
 
   return (
     <div
-      className="my-3 cursor-pointer flex flex-row items-center"
+      className="flex flex-row items-center my-3 cursor-pointer"
       onClick={() => {
         onClick(token)
       }}
@@ -66,7 +66,7 @@ function TokenRow({ token, onClick }: { token: Token; onClick: (selectedToken: T
       <CurrencyLogo currency={token} size={32} />
       <Typography className="ml-3 w-[115px] text-white">{token.symbol}</Typography>
       <Typography>{token.address}</Typography>
-      <Typography className="flex-1 flex justify-end">
+      <Typography className="flex justify-end flex-1">
         {balance ? balance?.toSignificant(4) : account ? <Loader stroke="white" /> : null}
       </Typography>
     </div>
@@ -114,11 +114,11 @@ export const TokenSelect = React.memo(
 
     return (
       <div className="mb-3">
-        <Typography className="text-primary text-xl">{i18n._(t`Auction Token`)}*</Typography>
-        <div className="mt-3 w-full flex flex-row">
-          <div className="flex-1 py-2 px-5 rounded bg-dark-900 border border-dark-800 w-full relative" ref={node}>
+        <Typography className="text-xl text-primary">{i18n._(t`Auction Token`)}*</Typography>
+        <div className="flex flex-row w-full mt-3">
+          <div className="relative flex-1 w-full px-5 py-2 border rounded bg-dark-900 border-dark-800" ref={node}>
             <input
-              className="bg-transparent placeholder-low-emphesis w-full"
+              className="w-full bg-transparent placeholder-low-emphesis"
               placeholder={i18n._(t`Search by symbol or Enter the address of the token you would like to auction.`)}
               value={searchQuery}
               onChange={(e) => {
@@ -131,12 +131,12 @@ export const TokenSelect = React.memo(
               {...rest}
             />
 
-            <div className="absolute top-2 right-5 text-secondary font-bold">{token?.symbol}</div>
+            <div className="absolute font-bold top-2 right-5 text-secondary">{token?.symbol}</div>
 
             {searchVisible && (
               <div className="absolute w-full left-0 top-[48px] z-10">
                 <div className="w-full rounded">
-                  <Typography className="rounded-t bg-dark-900 px-3 py-2">
+                  <Typography className="px-3 py-2 rounded-t bg-dark-900">
                     {searchQuery ? i18n._(t`Results`) : i18n._(t`Suggested`)}
                   </Typography>
                   <div className="rounded-b bg-dark-800 px-3 py-2 h-[232px] overflow-y-scroll">
@@ -150,10 +150,10 @@ export const TokenSelect = React.memo(
           </div>
           <div className="ml-3 w-[200px]"></div>
         </div>
-        <Typography className="mt-2 flex flex-row items-center">
-          <div className="text-secondary text-sm">{i18n._(t`Don't have a token?`)}</div>
+        <Typography className="flex flex-row items-center mt-2">
+          <div className="text-sm text-secondary">{i18n._(t`Don't have a token?`)}</div>
           <NavLink href="/miso/create-token">
-            <div className="text-blue underline ml-2 cursor-pointer text-sm">{i18n._(t`Create it now!`)}</div>
+            <div className="ml-2 text-sm underline cursor-pointer text-blue">{i18n._(t`Create it now!`)}</div>
           </NavLink>
         </Typography>
       </div>
