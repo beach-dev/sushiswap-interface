@@ -63,14 +63,14 @@ export const Input = React.memo(
 
     return (
       <div className="mb-5">
-        {label && <div className="text-primary text-xl">{i18n._(`${label}`)}</div>}
-        <div className="mt-3 w-full flex flex-row">
+        {label && <div className="text-xl text-primary">{i18n._(`${label}`)}</div>}
+        <div className="flex flex-row w-full mt-3">
           <div className="flex-1">
             {description && <Typography className="mb-2 text-secondary">{i18n._(`${description}`)}</Typography>}
 
             {type !== 'hidden' && (
-              <div className="flex items-center py-2 px-3 rounded bg-dark-900 border border-dark-800 w-full relative">
-                {icon && <div className="mr-3 w-5 h-5">{icon}</div>}
+              <div className="relative flex items-center w-full px-3 py-2 border rounded bg-dark-900 border-dark-800">
+                {icon && <div className="w-5 h-5 mr-3">{icon}</div>}
                 {(type == 'digit' || type == 'decimal' || type == 'text') && (
                   <input
                     className={classNames(
@@ -103,7 +103,7 @@ export const Input = React.memo(
 
                     {maxLength && (
                       <Typography className="text-right text-secondary">
-                        {i18n._(t`max ${maxLength} letters`)}
+                        {i18n._(`max ${maxLength} letters`)}
                       </Typography>
                     )}
                   </div>
@@ -113,10 +113,10 @@ export const Input = React.memo(
               </div>
             )}
 
-            {hint && <div className="mt-2 flex flex-row items-center">{hint}</div>}
+            {hint && <div className="flex flex-row items-center mt-2">{hint}</div>}
 
             {alert && alertVisible && (
-              <div className="flex flex-row items-center bg-purple bg-opacity-20 bg- mt-2 p-3 rounded">
+              <div className="flex flex-row items-center p-3 mt-2 rounded bg-purple bg-opacity-20 bg-">
                 <ExclamationCircleIcon className="w-5 h-5 mr-2 text-purple" aria-hidden="true" />
                 <Typography>{i18n._(`${alert}`)}</Typography>
               </div>

@@ -77,7 +77,7 @@ export default function CsvAddresses({ addresses, onManualMode, setAddresses }: 
           <div className="w-[310px] h-[180px] border border-1 border-dashed border-secondary flex flex-col items-center justify-center">
             <CheckCircleIcon className="w-[50px] h-[50px] text-green" aria-hidden="true" />
             <Typography className="mt-3 text-secondary">
-              {i18n._(t`File ${fileName} was uploaded successfully.`)}
+              {i18n._(`File ${fileName} was uploaded successfully.`)}
             </Typography>
             <div
               className="mt-3 mb-5 text-sm underline cursor-pointer text-blue"

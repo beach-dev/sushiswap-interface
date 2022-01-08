@@ -13,12 +13,12 @@ export default function ManualAddresses({ addresses, setAddresses }: any) {
 
   return (
     <div className="mb-4 mr-[200px]">
-      <Typography className="text-primary text-xl">{i18n._(t`Create List Manually`)}*</Typography>
-      <div className="my-3 grid grid-cols-12 gap-x-4">
-        <Typography variant="lg" className="col-span-7 text-primary underline">
+      <Typography className="text-xl text-primary">{i18n._(t`Create List Manually`)}*</Typography>
+      <div className="grid grid-cols-12 my-3 gap-x-4">
+        <Typography variant="lg" className="col-span-7 underline text-primary">
           {i18n._(t`Addresses`)}*
         </Typography>
-        <Typography variant="lg" className="col-span-4 text-primary underline">
+        <Typography variant="lg" className="col-span-4 underline text-primary">
           {i18n._(t`Purchase Amount Limits`)}*
         </Typography>
         <div className="col-span-1"></div>
@@ -37,7 +37,7 @@ export default function ManualAddresses({ addresses, setAddresses }: any) {
               padding={false}
             />
           </div>,
-          <div key={'col_2_' + index} className="col-span-4 w-full">
+          <div key={'col_2_' + index} className="w-full col-span-4">
             <Input
               label=""
               value={addresses[index].purchaseLimit}
@@ -62,7 +62,7 @@ export default function ManualAddresses({ addresses, setAddresses }: any) {
             }}
           />,
         ])}
-        <div className="col-span-11 flex justify-between items-center">
+        <div className="flex items-center justify-between col-span-11">
           <Button
             variant="outlined"
             color="gradient_1000"
@@ -73,11 +73,11 @@ export default function ManualAddresses({ addresses, setAddresses }: any) {
           >
             {i18n._(t`Add Another`)}
           </Button>
-          <Typography className="text-secondary">{i18n._(t`Total Number of Entries: ${addresses.length}`)}</Typography>
+          <Typography className="text-secondary">{i18n._(`Total Number of Entries: ${addresses.length}`)}</Typography>
         </div>
       </div>
 
-      <div className="flex flex-row items-start space-x-2 bg-purple bg-opacity-20 bg- mt-5 p-3 rounded">
+      <div className="flex flex-row items-start p-3 mt-5 space-x-2 rounded bg-purple bg-opacity-20 bg-">
         <ExclamationCircleIcon className="w-5 h-5 mr-2 text-purple" aria-hidden="true" />
         <Typography className="flex-1">
           {i18n._(
